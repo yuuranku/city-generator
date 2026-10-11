@@ -1,0 +1,38 @@
+[
+  {
+    "id": "settlement-0018",
+    "sourceId": "settlement-0018",
+    "name": "云原",
+    "label": "河畔都会"
+  },
+  {
+    "id": "settlement-0091",
+    "sourceId": "settlement-0091",
+    "name": "云城",
+    "label": "沿海港城"
+  },
+  {
+    "id": "administrative-centre-001",
+    "sourceId": "administrative-centre-001",
+    "name": "诺伊波列",
+    "label": "内河城镇"
+  },
+  {
+    "id": "administrative-centre-066",
+    "sourceId": "administrative-centre-066",
+    "name": "艾露洛瑞",
+    "label": "内陆村落"
+  },
+  {
+    "id": "border-site-002",
+    "sourceId": "border-site-002",
+    "name": "艾露卡拉",
+    "label": "边境要塞"
+  },
+  {
+    "id": "settlement-0343",
+    "sourceId": "settlement-0343",
+    "name": "岚潮",
+    "label": "海滨小港"
+  }
+]

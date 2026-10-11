@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="独立运行的城市地图生成器，包含地形、水系、街巷、建筑与港口。">
+  <title>城市生成器</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="assets/generator-version.js"></script>
+  <script defer src="assets/map-interaction.js"></script>
+  <script defer src="assets/city-character.js"></script>
+  <script defer src="assets/city-site.js"></script>
+  <script defer src="assets/city-detail.js"></script>
+  <script defer src="assets/city-map.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="page-header">
+    <div class="title"><span class="mark" aria-hidden="true">▦</span><div><h1>城市生成器</h1><p>地形、水系、街巷与建筑</p></div></div>
+    <div class="file-actions"><label class="button" for="import-city">导入城市 JSON</label><input id="import-city" type="file" accept=".json,application/json" hidden><button id="export-json" type="button" disabled>保存城市 JSON</button><button id="export-svg" type="button" disabled>导出 SVG</button></div>
+  </header>
+  <main>
+    <section class="city-toolbar" aria-label="城市设置">
+      <div class="city-choice"><label for="city-select">示例城市</label><select id="city-select" disabled><option>正在加载…</option></select></div>
+      <div class="city-heading"><h2 id="city-name">城市地图</h2><p id="city-description">选择城市，查看它的街巷与周边。</p></div>
+      <button id="regenerate" class="primary" type="button" disabled>重新生成</button>
+    </section>
+    <section id="city-map-section" aria-label="城市与周边地图">
+      <div id="city-map-viewport" tabindex="0" aria-label="城市地图，可拖动、缩放，也可用方向键平移">
+        <svg id="city-map-canvas" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="城市、地形、水系与农田"><g id="city-map-camera"><g id="city-fabric-layer"></g></g></svg>
+        <div class="city-map-extents" aria-label="地图范围"><button id="city-map-city" type="button" aria-pressed="true">城市</button><button id="city-map-region" type="button" aria-pressed="false">周边</button></div>
+        <div class="city-map-compass" aria-hidden="true">N<span>↑</span></div>
+        <output id="city-map-status" role="status" aria-live="polite"></output>
+        <nav class="city-map-tools" aria-label="地图缩放"><button id="city-map-zoom-in" type="button" aria-label="放大">＋</button><button id="city-map-zoom-out" type="button" aria-label="缩小">−</button><button id="city-map-reset" type="button" aria-label="复位">⌂</button></nav>
+        <div class="city-map-scale"><span id="city-scale-label"></span><i id="city-scale-rule"></i></div>
+      </div>
+      <footer class="map-footer"><div class="city-map-caption"><span><i class="city-key-building"></i>建筑</span><span><i class="city-key-water"></i>水系</span><span><i class="city-key-field"></i>农田</span></div><p>拖动平移 · 滚轮缩放 · 双指缩放</p></footer>
+    </section>
+    <dl id="city-stats" class="city-stats" aria-label="城市信息"><div><dt>人口</dt><dd id="population">—</dd></div><div><dt>建筑</dt><dd id="building-count">—</dd></div><div><dt>城市风格</dt><dd id="character">—</dd></div><div><dt>布局种子</dt><dd id="seed">—</dd></div></dl>
+    <p id="app-status" class="app-status" role="status" aria-live="polite"></p>
+  </main>
+</body>
+</html>

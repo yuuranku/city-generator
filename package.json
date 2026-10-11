@@ -1,0 +1,20 @@
+{
+  "name": "city-generator",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Deterministic standalone city planning and SVG maps",
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "start": "npm run build && node scripts/serve.mjs",
+    "test": "npm run build && node --test tests/*.test.cjs"
+  },
+  "dependencies": {
+    "flatbush": "4.6.2",
+    "polygon-clipping": "0.15.7"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.12"
+  }
+}
